@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect } from 'react';
 import {SpeechConfig, AudioConfig, SpeechRecognizer, ResultReason, CancellationDetails, CancellationReason} from 'microsoft-cognitiveservices-speech-sdk';
@@ -24,12 +23,14 @@ function fromFile() {
                 const cancellation = CancellationDetails.fromResult(result);
                 console.log(`CANCELED: Reason=${cancellation.reason}`);
 
-                if (cancellation.reason == CancellationReason.Error) {
+                if (cancellation.reason === CancellationReason.Error) {
                     console.log(`CANCELED: ErrorCode=${cancellation.ErrorCode}`);
                     console.log(`CANCELED: ErrorDetails=${cancellation.errorDetails}`);
                     console.log("CANCELED: Did you set the speech resource key and region values?");
                 }
                 break;
+            default:
+              console.log("Nothing ran");
         }
         speechRecognizer.close();
     });
