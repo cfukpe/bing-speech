@@ -1,5 +1,21 @@
 .App {
   text-align: center;
+  width: 100vw;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.audio-recorder{
+  display: none;
+}
+
+button{
+  padding: 1rem 3rem;
+  border: 1px solid rgba(0,0,0,.05);
+  color: #444;
+  cursor: pointer;
 }
 
 .App-logo {
